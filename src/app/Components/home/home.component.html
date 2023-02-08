@@ -1,0 +1,20 @@
+<!-- interpolation  => {{}} -->
+<!-- data binding -->
+<!-- <h2>{{title}}</h2> -->
+
+<!-- <h1>{{sayHello()}}</h1> -->
+
+
+<h2>{{iti.trackName}}</h2>
+<img src="{{iti.trackLogo}}" width="250" height="300">
+<!-- <ul>
+    <li>{{iti.itiBranches[0]}}</li>
+    <li>{{iti.itiBranches[1]}}</li>
+    <li>{{iti.itiBranches[2]}}</li>
+</ul> -->
+
+<!-- loop on element -->
+<!-- *ngFor => for of -->
+<ul>
+    <li *ngFor="let branch of iti.itiBranches">{{branch}}</li>
+</ul>
