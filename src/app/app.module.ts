@@ -7,6 +7,8 @@ import { SidebarComponent } from './Components/sidebar/sidebar.component';
 import { HomeComponent } from './Components/home/home.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HeaderComponent } from './Components/header/header.component';
+import { FormsModule } from '@angular/forms';
+import { ProductsComponent } from './Components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,14 @@ import { HeaderComponent } from './Components/header/header.component';
     SidebarComponent,
     HomeComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

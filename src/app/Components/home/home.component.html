@@ -5,8 +5,8 @@
 <!-- <h1>{{sayHello()}}</h1> -->
 
 
-<h2>{{iti.trackName}}</h2>
-<img src="{{iti.trackLogo}}" width="250" height="300">
+<!-- <h2>{{iti.trackName}}</h2> -->
+<!-- <img src="{{iti.trackLogo}}" width="250" height="300"> -->
 <!-- <ul>
     <li>{{iti.itiBranches[0]}}</li>
     <li>{{iti.itiBranches[1]}}</li>
@@ -15,6 +15,35 @@
 
 <!-- loop on element -->
 <!-- *ngFor => for of -->
-<ul>
+<!-- <ul>
     <li *ngFor="let branch of iti.itiBranches">{{branch}}</li>
+</ul> -->
+
+
+
+<!-- Day2 -->
+<!-- Class -->
+
+<h1>{{classData.name}}</h1>
+<!-- <img src="{{classData.imgURL}}" width="300" height="300"> -->
+<!-- property binding -->
+<img [src]="classData.imgURL" *ngIf="showImg" width="300" height="300">
+<ul>
+    <li *ngFor="let item of classData.data">{{item}}</li>
 </ul>
+
+<!-- Event Binding -->
+<!-- toggle => show & hide image -->
+<button class="btn btn-primary" (click)="toggleImg()">Toggle img</button>
+
+
+<!-- property binding => one way -->
+<!-- <input type="text" class="form-control" value="{{userFeedback}}"> -->
+<!-- <input type="text" class="form-control" [value]="userFeedback"> -->
+<!-- ngModel => value -->
+<!-- two way binding -->
+<input type="text" class="form-control" [(ngModel)]="userFeedback">
+
+<h2>{{userFeedback}}</h2>
+
+
