@@ -6,6 +6,8 @@
       <th scope="col">Image</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
+      <!-- Day3 -->
+      <th scope="col">Count</th>
       <th scope="col">Buy</th>
     </tr>
   </thead>
@@ -32,7 +34,9 @@
     <!-- virtual containers -->
     <!-- ng-container || ng-template || ng-content -->
 
-    <ng-container *ngFor="let prd of productList;let i=index">
+    <!-- <ng-container *ngFor="let prd of productList;let i=index"> -->
+      <!-- Day3 -->
+      <ng-container *ngFor="let prd of prdListOfCat;let i=index">
       <!-- <tr *ngIf="prd.quantity>0"> -->
       <tr>
 
@@ -67,10 +71,15 @@
 
         </td>
         <td>{{prd.price}}</td>
-        <td><button class="btn btn-danger" [disabled]="prd.quantity==0">Buy</button></td>
+        <!-- Day3 -->
+        <td><input type="number" class="form-control" #itemsCount></td>
+        <td><button class="btn btn-danger" [disabled]="prd.quantity==0" (click)="updateTotalPrice(prd.price,itemsCount.value)">Buy</button></td>
         <!-- <td><button class="btn btn-danger" [hidden]="prd.quantity==0">Buy</button></td> -->
       </tr>
     </ng-container>
   </tbody>
 
 </table>
+
+
+<!-- <h1 class="bg-warning">For Test total price: {{orderTotalPrice}}</h1> -->

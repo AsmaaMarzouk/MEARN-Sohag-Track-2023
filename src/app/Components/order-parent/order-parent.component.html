@@ -1,0 +1,16 @@
+<!-- Day3 -->
+<!-- Order component -->
+<!-- two way binding -->
+<h2>Select from parent</h2>
+<select name="cat" id="cat" class="form-control" [(ngModel)]="selectedCatID">
+
+    <option value="0">All</option>
+    <option *ngFor="let cat of catList" [value]="cat.id">{{cat.name}}</option>
+</select>
+
+<!-- <h1 class="bg-danger">For test select cat id: {{selectedCatID}}</h1> -->
+<!-- <button (click)="func1()"></button> -->
+
+<app-products [receivedCatID]="selectedCatID" (totalPriceChangedEv)="totalInparentFunc($event)"></app-products>
+
+<h1 class="bg-info">In parent Total Price : {{receivedTotalPrice}}</h1>
