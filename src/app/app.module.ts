@@ -10,6 +10,9 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './Components/products/products.component';
 import { OrderParentComponent } from './Components/order-parent/order-parent.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
+import { ProductDetailsComponent } from './Components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { OrderParentComponent } from './Components/order-parent/order-parent.com
     FooterComponent,
     HeaderComponent,
     ProductsComponent,
-    OrderParentComponent
+    OrderParentComponent,
+    NotFoundComponent,
+    MainLayoutComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

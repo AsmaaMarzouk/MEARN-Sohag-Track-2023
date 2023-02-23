@@ -6,6 +6,8 @@
       <th scope="col">Image</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
+      <!-- Day4 -->
+      <th>Details</th>
       <!-- Day3 -->
       <th scope="col">Count</th>
       <th scope="col">Buy</th>
@@ -71,6 +73,10 @@
 
         </td>
         <td>{{prd.price}}</td>
+
+        <!-- Day4 -->
+        <td><button class="btn btn-success" (click)="openDetailsOfProduct(prd.id)">Details</button></td>
+
         <!-- Day3 -->
         <td><input type="number" class="form-control" #itemsCount></td>
         <td><button class="btn btn-danger" [disabled]="prd.quantity==0" (click)="updateTotalPrice(prd.price,itemsCount.value)">Buy</button></td>
