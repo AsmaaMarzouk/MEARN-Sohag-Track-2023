@@ -41,4 +41,17 @@ export class ProductService {
   getProductByID(prdID:number):Iproduct|undefined{
     return this.productList.find(prd=>prd.id==prdID);
   }
+
+
+
+  // get products ids
+  getProductsListID():number[]{
+    return this.productList.map(prd=>prd.id);
+  }
+
+
+  // Search by product name
+searchByProductName(prdName:string):Iproduct|undefined{
+return this.productList.find(prd=>prd.name==prdName);
+}
 }

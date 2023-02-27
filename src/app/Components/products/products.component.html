@@ -1,3 +1,8 @@
+<!-- Day5 -->
+<!--Date Pipe -->
+
+<h1 class="text-info">{{date1|date:'short'}}</h1>
+<!-- ###################### -->
 <table class="table mt-3">
   <thead>
     <tr class="bg-dark text-light">
@@ -5,7 +10,8 @@
       <th scope="col">Name</th>
       <th scope="col">Image</th>
       <th scope="col">Quantity</th>
-      <th scope="col">Price</th>
+      <th scope="col">Price in USD</th>
+      <th scope="col">Price in EGP</th>
       <!-- Day4 -->
       <th>Details</th>
       <!-- Day3 -->
@@ -44,8 +50,11 @@
 
         <!-- <td>{{prd.id}}</td> -->
         <td>{{i+1}}</td>
-        <td>{{prd.name}}</td>
-        <td><img [src]="prd.imgURL" width="200" height="180"></td>
+
+        <!-- Day5 -->
+        <td>{{prd.name | uppercase}}</td>
+        <!-- <td>{{prd.name | lowercase}}</td> -->
+        <td><img [src]="prd.imgURL" width="200" height="180" BorderBox="green" HoverColor="orange"></td>
         <!-- <td>{{prd.quantity}}</td> -->
         <td>
           <!-- <span *ngIf="prd.quantity>0">{{prd.quantity}}</span>
@@ -72,7 +81,13 @@
           </ng-container>
 
         </td>
-        <td>{{prd.price}}</td>
+
+        <!-- Day5 -->
+        <!-- <td>{{prd.price|currency:'EGP'}}</td> -->
+        <td>{{prd.price|currency:'USD':'symbol'}}</td>
+        <!-- <td>{{prd.price|USDToEGP|currency:'EGP'}}</td> -->
+        <td>{{prd.price|USDToEGP:20|currency:'EGP'}}</td>
+        <!-- <td>{{prd.price|currency:'EUR':'symbol'}}</td> -->
 
         <!-- Day4 -->
         <td><button class="btn btn-success" (click)="openDetailsOfProduct(prd.id)">Details</button></td>
@@ -89,3 +104,4 @@
 
 
 <!-- <h1 class="bg-warning">For Test total price: {{orderTotalPrice}}</h1> -->
+

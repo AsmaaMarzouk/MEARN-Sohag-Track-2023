@@ -1,3 +1,15 @@
+<!-- Day5 -->
+<div class="mt-4">
+  <label for="userName">User Name:</label>
+  <input type="text" id="userName" name="userName" class="form-control" #userName>
+
+</div>
+
+
+<button (click)="getProducts()">Get Products Array</button>
+<!-- #################### -->
+
+
 <!-- Day3 -->
 <!-- Order component -->
 <!-- two way binding -->
@@ -14,3 +26,5 @@
 <app-products [receivedCatID]="selectedCatID" (totalPriceChangedEv)="totalInparentFunc($event)"></app-products>
 
 <h1 class="bg-info">In parent Total Price : {{receivedTotalPrice}}</h1>
+
+

@@ -21,6 +21,10 @@ orderTotalPrice:number = 0;
 @Output() totalPriceChangedEv:EventEmitter<number>;
 // categories => id:1 (Mobiles) || id:2 (LabTop) || id:3 (TV)
 // Day4 => inject inside constructor
+
+
+// Day5
+date1:Date = new Date();
 constructor(private prdService:ProductService,private router:Router){
   this.totalPriceChangedEv=new EventEmitter<number>();
   // this.productList=[

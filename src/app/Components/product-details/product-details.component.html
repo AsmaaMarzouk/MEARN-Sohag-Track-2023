@@ -7,4 +7,18 @@
       <h6 class="card-text">Quantity: {{prd?.quantity}}</h6>
     </div>
   </div>
+
+  <div class="btn-group">
+    <button class="btn btn-warning" (click)="GoPrevFunc()" [disabled]="currentProductID==prdIDList[0]">Previous</button>
+    <button class="btn btn-danger" (click)="GoNextFunc()" [disabled]="currentProductID==prdIDList[prdIDList.length-1]">Next</button>
+  </div>
+</div>
+
+
+
+
+<div class="mt-3">
+  <label for="search">Search by product: </label>
+  <input type="text" class="form-control" id="search" name="search" #prdName>
+  <button class="btn btn-success" (click)="searchByProduct(prdName.value)">Search</button>
 </div>
