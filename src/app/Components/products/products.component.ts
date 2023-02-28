@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Iproduct } from 'src/app/Models/iproduct';
+import { ProductApiService } from 'src/app/Services/product-api.service';
 import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
@@ -25,7 +26,7 @@ orderTotalPrice:number = 0;
 
 // Day5
 date1:Date = new Date();
-constructor(private prdService:ProductService,private router:Router){
+constructor(private prdService:ProductService,private router:Router,private productAPIService:ProductApiService){
   this.totalPriceChangedEv=new EventEmitter<number>();
   // this.productList=[
   //   {id:1,name:"Samgsung",price:12000,quantity:1,catID:1,imgURL:"https://images.pexels.com/photos/50614/pexels-photo-50614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
@@ -40,8 +41,21 @@ constructor(private prdService:ProductService,private router:Router){
 // Day3
   ngOnChanges(): void {
     // this.getProductsOfCat();
+// Day4
+  //  this.prdListOfCat = this.prdService.getProductByCategoryID(this.receivedCatID);
 
-   this.prdListOfCat = this.prdService.getProductByCategoryID(this.receivedCatID);
+  //  Day6
+  if(this.receivedCatID==0){
+    this.productAPIService.getAllProducts().subscribe(data=>{
+      this.prdListOfCat=data;
+    })
+  }
+  else{
+  this.productAPIService.getProductsByCategoryId(this.receivedCatID).subscribe(data=>{
+
+    this.prdListOfCat=data;
+  })
+}
   }
   ngOnInit(): void {
     // this.getProductsOfCat()

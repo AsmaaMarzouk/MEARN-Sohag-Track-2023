@@ -15,7 +15,7 @@ import { MainLayoutComponent } from './Components/main-layout/main-layout.compon
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
 import { BorderBoxDirective } from './Directives/border-box.directive';
 import { UsdToegpPipe } from './Pipes/usd-toegp.pipe';
-
+import {  HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +35,7 @@ import { UsdToegpPipe } from './Pipes/usd-toegp.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
 
   ],
   providers: [],
