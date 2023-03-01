@@ -59,6 +59,11 @@ constructor(private prdService:ProductService,private router:Router,private prod
   }
   ngOnInit(): void {
     // this.getProductsOfCat()
+
+    // Day7
+    this.productAPIService.getAllProducts().subscribe(data=>{
+      this.prdListOfCat=data;
+    })
   }
 
 
