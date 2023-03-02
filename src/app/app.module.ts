@@ -18,6 +18,7 @@ import { UsdToegpPipe } from './Pipes/usd-toegp.pipe';
 import {  HttpClientModule } from '@angular/common/http';
 import { AddNewProductComponent } from './Components/Admin/add-new-product/add-new-product.component';
 import { UserRegisterComponent } from './Components/user-register/user-register.component';
+import { UserLoginComponent } from './Components/user-login/user-login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { UserRegisterComponent } from './Components/user-register/user-register.
     BorderBoxDirective,
     UsdToegpPipe,
     AddNewProductComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

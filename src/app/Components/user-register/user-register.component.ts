@@ -33,6 +33,8 @@ this.userFormGroup=this.formBuilder.group({
     city:[''],
     street:['']
   }),
+  referral:[''],
+  refOther:[''],
   password:[''],
   repassword:['']
 })
@@ -49,4 +51,26 @@ get mobileNo(){
 addMobile(){
   this.mobileNo.push(this.formBuilder.control(''))
 }
+
+
+// Day8
+get referral(){
+  return this.userFormGroup.get('referral');
+}
+
+
+updateValidation()
+{
+
+  if(this.referral?.value=='other'){
+    this.userFormGroup.get('refOther')?.addValidators([Validators.required]);
+
+  }
+  else{
+
+    this.userFormGroup.get('refOther')?.clearValidators();
+  }
+  this.userFormGroup.get('refOther')?.updateValueAndValidity();
+}
+
 }

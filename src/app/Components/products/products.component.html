@@ -47,7 +47,7 @@
 
     <!-- <ng-container *ngFor="let prd of productList;let i=index"> -->
       <!-- Day3 -->
-      <ng-container *ngFor="let prd of prdListOfCat;let i=index">
+      <ng-container *ngFor="let prd of prdListOfCat;let i=index;trackBy:trackPrdFunc">
       <!-- <tr *ngIf="prd.quantity>0"> -->
       <tr>
 

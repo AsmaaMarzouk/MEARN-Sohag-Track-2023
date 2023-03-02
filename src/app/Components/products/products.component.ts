@@ -95,5 +95,7 @@ openDetailsOfProduct(prdID:number){
 this.router.navigate(['Products',prdID])
 }
 
-
+trackPrdFunc(index:number, item:Iproduct){
+  return item.id;
+}
 }
